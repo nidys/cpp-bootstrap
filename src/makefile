@@ -2,8 +2,8 @@
 #https://stackoverflow.com/questions/2908057/can-i-compile-all-cpp-files-in-src-to-os-in-obj-then-link-to-binary-in
 
 IDIR =../include
-CC=gcc
-CFLAGS=-I$(IDIR)
+CC=g++
+CPPFLAGS=-I$(IDIR) -std=c++14 -pthread
 
 ODIR=obj
 LDIR =../lib
@@ -18,10 +18,10 @@ OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 
 $(ODIR)/%.o: %.cpp $(DEPS)
-	$(CC) -c -o $@ $< $(CFLAGS)
+	$(CC) -c -o $@ $< $(CPPFLAGS)
 
-main: $(OBJ)
-	gcc -o $@ $^ $(CFLAGS) $(LIBS)
+main.out: $(OBJ)
+	$(CC) -o $@ $^ $(CPPFLAGS) $(LIBS)
 
 .PHONY: clean
 
