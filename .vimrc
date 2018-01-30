@@ -1,4 +1,7 @@
-" Vundle setup
+"First do this manually:
+"git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+"Vundle setup
 set nocompatible              " be iMproved, required
 filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -32,7 +35,7 @@ syntax on
 set nohlsearch
 nnoremap ; :
 
-set shell=/bin/bash\ -i
+"set shell=/bin/bash\ -i
 
 let g:tagbar_ctags_bin='/usr/bin/ctags'
 let g:ctrlp_max_files=20000
