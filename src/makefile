@@ -10,18 +10,20 @@ LDIR =../lib
 
 LIBS=-lm
 
+$(shell mkdir -p obj)
+
 _DEPS = hello.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
 _OBJ = hello.o main.o 
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
-
 $(ODIR)/%.o: %.cpp $(DEPS)
 	$(CC) -c -o $@ $< $(CPPFLAGS)
 
 main.out: $(OBJ)
 	$(CC) -o $@ $^ $(CPPFLAGS) $(LIBS)
+	./main.out
 
 .PHONY: clean
 
