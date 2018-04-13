@@ -2,6 +2,7 @@
 #define _HELLO_H
 
 void printHello();
+int get1();
 void parallelHelloPrint();
 
 #endif

@@ -3,6 +3,10 @@
 #include <thread>
 #include<iostream>
 
+int get1()
+{
+  return 1;
+}
 void printHello()
 {
   printf("Hello world\n");

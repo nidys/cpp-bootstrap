@@ -53,5 +53,6 @@ Session.vim
 *~
 # auto-generated tag files
 tags
-
+lib/googletest/
+test/include/
 # End of https://www.gitignore.io/api/vim,c++
