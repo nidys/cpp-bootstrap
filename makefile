@@ -36,6 +36,7 @@ $(OUTPUT): $(OBJ)
 .PHONY: $(TEST_OUTPUT)
 
 $(TEST_OUTPUT): obj/hello.o
+	$(shell ./setup_test.sh)
 	$(CC) $(TEST_CPPFLAGS) $(INOBJ) obj/hello.o test/test_hello.cpp -o unittest
 	./unittest
 
